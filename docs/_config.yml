@@ -21,6 +21,10 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "_posts"
+      path: "_articles"
     values:
-      layout: "blog-post"
+      layout: "article"
+collections:
+  articles:
+    output: true
+    permalink: /:collection/:name

@@ -1,0 +1,74 @@
+@use "colors";
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  color: colors.$kobo-gray-24;
+}
+
+body {
+  // height: 100%;
+  background: colors.$kobo-white;
+  padding: 0;
+  margin: 0;
+}
+
+html, body, input, textarea, select, button {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+a {
+  color: colors.$kobo-blue;
+  text-decoration: none;
+  border-bottom: 1px dotted colors.$kobo-blue;
+}
+
+a:hover {
+  border-bottom-style: solid;
+}
+
+a:active {
+  transform: translateY(1px);
+}
+
+p {
+  margin: 1.5rem 0;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px dotted currentColor;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}

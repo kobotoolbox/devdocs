@@ -7,34 +7,34 @@ This is an image component. Things to be passed:
 {% endcomment %}
 {% capture full_image_path %}{{ site.baseurl }}{{ include.file | url_escape }}{% endcapture %}
 <figure
-    class='image
-        {% if include.type == "left" %}
-            image--left
-        {% elsif include.type == "right" %}
-            image--right
-        {% elsif include.type == "full" %}
-            image--full
-        {% else %}
-            image-full
-        {% endif %}'
+  class='image
+    {% if include.type == "left" %}
+      image--left
+    {% elsif include.type == "right" %}
+      image--right
+    {% elsif include.type == "full" %}
+      image--full
+    {% else %}
+      image-full
+    {% endif %}'
 >
-    <a
-        class="image__link"
-        {% if include.link %}
-        href="{{ include.link }}"
-        target="_blank"
-        {% endif %}
-    >
-        <img
-            class="image__img"
-            src="{{ full_image_path }}"
-            alt="{{ include.file }}"
-            {% if include.caption %}
-            title="{{ include.caption }}"
-            {% endif %}
-        >
-    </a>
-    {% if include.caption %}
-    <figcaption class="image__caption">{{ include.caption }}</figcaption>
+  <a
+    class="image__link"
+    {% if include.link %}
+    href="{{ include.link }}"
+    target="_blank"
     {% endif %}
+  >
+    <img
+      class="image__img"
+      src="{{ full_image_path }}"
+      alt="{{ include.file }}"
+      {% if include.caption %}
+      title="{{ include.caption }}"
+      {% endif %}
+    >
+  </a>
+  {% if include.caption %}
+  <figcaption class="image__caption">{{ include.caption }}</figcaption>
+  {% endif %}
 </figure>

@@ -2,3 +2,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+docs/style.css
+docs/style.css.map
+.DS_Store
+node_modules

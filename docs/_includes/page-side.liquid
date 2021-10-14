@@ -1,0 +1,40 @@
+<aside class="page__side side">
+  <header role="banner" class="side__banner">
+    <a href="{{ site.baseurl }}" title="{{ site.name }}">
+      {% include kobologo.svg %}
+    </a>
+  </header>
+
+  <nav role="navigation" class="side__navigation">
+    <h2>Articles:</h2>
+
+    <ul class="links-list">
+      {% for article in site.articles %}
+        <li>
+          <a href="{{ article.url }}">
+            {{ article.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    
+    <h2>Useful places:</h2>
+    
+    <ul class="links-list">
+      {% for link in site.data.links %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  
+  <hr>
+  
+  <footer class="side__footer">
+    <p>KoBoToolbox at the Harvard Humanitarian Initiative</p>
+    <p><a href="https://www.google.com/maps/search/14+Story+St,+Cambridge,+MA+02138">14 Story St, Second floor, Cambridge, MA 02138</a></p>
+  </footer>
+</aside>
