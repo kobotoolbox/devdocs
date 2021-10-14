@@ -1,1 +1,26 @@
-theme: jekyll-theme-minimal
+name: "KoBoToolbox Dev Docs"
+description: "KoBoToolbox documentation by developers for developers."
+baseurl: "https://kobotoolbox.github.io"
+
+# site configuration
+safe: true
+quiet: false
+future: true
+encoding: utf-8
+markdown: kramdown
+kramdown:
+  auto_ids: false
+timezone: US/Eastern
+port: 2038
+permalink: /article/:title
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "blog-post"

@@ -1,0 +1,91 @@
+{% assign versionCache = site.time|date: "%Y-%m-%d_%H-%M-%S" %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    {% comment %}
+    stuff that needs to be first
+    {% endcomment %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    {% comment %}
+    site information
+    {% endcomment %}
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+    <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.shortdescription }}{% endif %}"/>
+    <base href="{{ site.baseurl }}"/>
+    <link rel="home" href="{{ site.baseurl }}"/>
+
+    {% comment %}
+    stuff for robots
+    {% endcomment %}
+    <meta name="robots" content="index,follow,noodp"/>
+    <meta name="googlebot" content="index,follow"/>
+
+    {% comment %}
+    open graph tags
+    {% endcomment %}
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <meta property="og:title" content="{% if page.title %}{{ page.title | strip_html | strip_newlines }}{% else %}{{ site.title }}{% endif %}"/>
+    <meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.shortdescription }}{% endif %}"/>
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}"/>
+    <meta name="twitter:site" content="@kobotoolbox"/>
+    <meta name="twitter:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.shortdescription }}{% endif %}"/>
+
+    {% comment %}
+    OG tags for blog posts
+    {% endcomment %}
+    {% if page.collection == 'posts' %}
+        <meta property="og:type" content="article"/>
+        <meta property="article:published_time" content="{{page.date}}"/>
+        {% if page.author %}
+            <meta property="article:author" content="{{page.author}}"/>
+        {% endif %}
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:creator" content="@kobotoolbox"/>
+        <meta name="twitter:title" content="{{page.title}}"/>
+
+        {% if page.thumbnail %}
+            <meta name="twitter:image" content="{{ page.thumbnail | prepend: site.baseurl }}"/>
+            <meta property="og:image" content="{{ page.thumbnail | prepend: site.baseurl }}"/>
+        {% else %}
+            <meta name="twitter:image" content="{{ site.default_og_image | prepend: site.baseurl }}"/>
+            <meta property="og:image" content="{{ site.default_og_image | prepend: site.baseurl }}"/>
+        {% endif %}
+    {% else %}
+    {% comment %}
+    OG tags for non-blog pages
+    {% endcomment %}
+        <meta property="og:type" content="website"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="{{site.name}}"/>
+        <meta name="twitter:image" content="{{ site.default_og_image | prepend: site.baseurl }}"/>
+        <meta property="og:image" content="{{ site.default_og_image | prepend: site.baseurl }}"/>
+    {% endif %}
+
+    {% comment %}
+    style and icons
+    {% endcomment %}
+    <link href="{{ site.baseurl }}/css/normalize.css" rel="stylesheet" media="all"/>
+    <link href="{{ site.baseurl }}/css/index.css?{{ versionCache }}" rel="stylesheet" media="all"/>
+    <link rel="icon" href="{{ site.baseurl }}/favicon.png?{{ versionCache }}"/>
+
+    {% comment %}
+    scripts
+    {% endcomment %}
+    <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/js/responsiveslides.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/js/kobo.js"></script>
+</head>
+
+<body {% if page.pageid %}class="{{ page.pageid }}"{% endif %}>
+    {% include page-header.liquid %}

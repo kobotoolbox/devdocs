@@ -1,0 +1,17 @@
+{
+  "name": "kobotoolbox.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "repository": "https://github.com/kobotoolbox/kobotoolbox.github.io.git",
+  "bugs": "https://github.com/kobotoolbox/kobotoolbox.github.io/issues",
+  "scripts": {
+    "jekyll-build": "jekyll build --source docs",
+    "jekyll-serve": "jekyll serve --watch --baseurl '' --source docs"
+  },
+  "browserslist": [
+    "last 4 version"
+  ],
+  "engines": {
+    "node": ">=16.5.0"
+  }
+}
