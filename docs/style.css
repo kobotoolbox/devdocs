@@ -153,4 +153,147 @@ textarea {
   margin: 0 0 1.5rem;
 }
 
+.highlighter-rouge table td {
+  padding: 0.25rem;
+}
+
+.highlighter-rouge table pre {
+  margin: 0;
+}
+
+.highlighter-rouge {
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.highlighter-rouge,
+.highlighter-rouge .w {
+  color: white;
+  background-color: #333847;
+}
+
+.highlighter-rouge .err {
+  color: #333847;
+  background-color: #ffd6dc;
+}
+
+.highlighter-rouge .c,
+.highlighter-rouge .cd,
+.highlighter-rouge .cm,
+.highlighter-rouge .c1,
+.highlighter-rouge .cs {
+  color: #979fb4;
+}
+
+.highlighter-rouge .cp {
+  color: white;
+}
+
+.highlighter-rouge .nt {
+  color: white;
+}
+
+.highlighter-rouge .dl {
+  color: #979fb4;
+}
+
+.highlighter-rouge .o,
+.highlighter-rouge .ow {
+  color: #979fb4;
+}
+
+.highlighter-rouge .p,
+.highlighter-rouge .pi {
+  color: #979fb4;
+}
+
+.highlighter-rouge .gi {
+  color: #22b0c3;
+}
+
+.highlighter-rouge .gd {
+  color: #ffd6dc;
+}
+
+.highlighter-rouge .gh {
+  color: #3da5f5;
+  background-color: #333847;
+  font-weight: bold;
+}
+
+.highlighter-rouge .k,
+.highlighter-rouge .kn,
+.highlighter-rouge .kp,
+.highlighter-rouge .kr,
+.highlighter-rouge .kv {
+  color: #3da5f5;
+}
+
+.highlighter-rouge .kc {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .kt {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .kd {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .s,
+.highlighter-rouge .sb,
+.highlighter-rouge .sc,
+.highlighter-rouge .sd,
+.highlighter-rouge .s2,
+.highlighter-rouge .sh,
+.highlighter-rouge .sx,
+.highlighter-rouge .s1 {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .sr {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .si {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .se {
+  color: #5cc8d6;
+}
+
+.highlighter-rouge .nn {
+  color: white;
+}
+
+.highlighter-rouge .nc {
+  color: white;
+}
+
+.highlighter-rouge .no {
+  color: white;
+}
+
+.highlighter-rouge .na {
+  color: #3da5f5;
+}
+
+.highlighter-rouge .m,
+.highlighter-rouge .mf,
+.highlighter-rouge .mh,
+.highlighter-rouge .mi,
+.highlighter-rouge .il,
+.highlighter-rouge .mo,
+.highlighter-rouge .mb,
+.highlighter-rouge .mx {
+  color: #3da5f5;
+}
+
+.highlighter-rouge .ss {
+  color: #3da5f5;
+}
+
 /*# sourceMappingURL=style.css.map */
