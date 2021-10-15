@@ -37,7 +37,8 @@ a:active {
   transform: translateY(1px);
 }
 
-p {
+p,
+blockquote {
   margin: 1.5rem 0;
 }
 
@@ -72,7 +73,6 @@ textarea {
 }
 
 blockquote {
-  margin: 1.5rem 0;
   padding-left: 0.5rem;
   border-left: 2px dotted colors.$kobo-gray-40;
 }

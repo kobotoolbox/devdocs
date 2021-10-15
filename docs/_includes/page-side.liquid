@@ -10,7 +10,7 @@
 
     <ul class="links-list">
       {% for article in site.articles %}
-        <li>
+        <li class="links-list__item {% if article.url == page.url %}links-list__item--active{% endif %}">
           <a href="{{ article.url }}">
             {{ article.title }}
           </a>
@@ -22,7 +22,7 @@
 
     <ul class="links-list">
       {% for link in site.data.links %}
-        <li>
+        <li class="links-list__item">
           <a href="{{ link.url }}">
             {{ link.title }}
           </a>

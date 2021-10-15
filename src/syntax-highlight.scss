@@ -8,10 +8,19 @@
   margin: 0;
 }
 
+.highlighter-rouge pre {
+  margin: 0;
+}
+
 .highlighter-rouge {
   padding: 0 0.25rem;
   border-radius: 0.25rem;
   font-size: 0.9rem;
+}
+
+// for the block codes
+div.highlighter-rouge {
+  padding: 0.5rem;
 }
 
 .highlighter-rouge,

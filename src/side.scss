@@ -42,3 +42,15 @@
 .side__footer {
   padding: 1.5rem;
 }
+
+.links-list {}
+
+.links-list__item {
+  // &::marker {
+  //   color: colors.$kobo-blue;
+  // }
+
+  &.links-list__item--active a {
+    border-bottom-style: solid;
+  }
+}
