@@ -70,3 +70,33 @@ fieldset {
 textarea {
   resize: vertical;
 }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 0.5rem;
+  border-left: 2px dotted colors.$kobo-gray-40;
+}
+
+table {
+  border: 1px dotted currentColor;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  tr th {
+    font-weight: bold;
+  }
+
+  tr th,
+  tr td {
+    border: 1px dotted currentColor;
+    padding: 0.5rem;
+  }
+
+  thead tr th {
+    border-style: solid;
+  }
+}
+
+pre {
+  overflow-x: auto;
+}

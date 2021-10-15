@@ -1,15 +1,27 @@
-.page {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
+@use "colors";
+
+@media screen and (max-width: 799px) {
+  .page__content {
+    border-top: 0.5rem solid colors.$kobo-gray-24;
+  }
 }
 
-.page__side {
-  width: 25%;
-}
+@media screen and (min-width: 800px) {
+  .page {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
 
-.page__content {
-  flex: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
+  .page__side {
+    width: 25%;
+  }
+
+  .page__content {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // to fit reasonable number of characters in line (around 100)
+    max-width: 60rem;
+  }
 }

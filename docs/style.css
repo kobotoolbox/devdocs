@@ -72,31 +72,65 @@ textarea {
   resize: vertical;
 }
 
-.page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 0.5rem;
+  border-left: 2px dotted #565e76;
 }
 
-.page__side {
-  width: 25%;
+table {
+  border: 1px dotted currentColor;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+table tr th {
+  font-weight: bold;
+}
+table tr th,
+table tr td {
+  border: 1px dotted currentColor;
+  padding: 0.5rem;
+}
+table thead tr th {
+  border-style: solid;
 }
 
-.page__content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
+pre {
+  overflow-x: auto;
 }
 
+@media screen and (max-width: 799px) {
+  .page__content {
+    border-top: 0.5rem solid #333847;
+  }
+}
+@media screen and (min-width: 800px) {
+  .page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+
+  .page__side {
+    width: 25%;
+  }
+
+  .page__content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 60rem;
+  }
+}
 .side {
   border-right: 1px solid currentColor;
 }
@@ -151,6 +185,28 @@ textarea {
 
 .article__title {
   margin: 0 0 1.5rem;
+}
+
+.article__content h1::before,
+.article__content h2::before,
+.article__content h3::before,
+.article__content h4::before {
+  color: #979fb4;
+}
+.article__content h1::before {
+  content: "# ";
+}
+.article__content h2::before {
+  content: "## ";
+}
+.article__content h3::before {
+  content: "### ";
+}
+.article__content h4::before {
+  content: "#### ";
+}
+.article__content a code {
+  color: #9ed2fa;
 }
 
 .highlighter-rouge table td {

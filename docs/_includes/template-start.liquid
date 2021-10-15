@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  
+
   {% comment %}
   site information
   {% endcomment %}
@@ -18,13 +18,13 @@
   <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.shortdescription }}{% endif %}"/>
   <base href="{{ site.baseurl }}"/>
   <link rel="home" href="{{ site.baseurl }}"/>
-  
+
   {% comment %}
   stuff for robots
   {% endcomment %}
   <meta name="robots" content="index,follow,noodp"/>
   <meta name="googlebot" content="index,follow"/>
-  
+
   {% comment %}
   open graph tags
   {% endcomment %}
@@ -35,7 +35,7 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}"/>
   <meta name="twitter:site" content="@kobotoolbox"/>
   <meta name="twitter:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.shortdescription }}{% endif %}"/>
-  
+
   {% comment %}
   OG tags for blog posts
   {% endcomment %}
@@ -47,11 +47,11 @@
   {% if page.author %}
   <meta property="article:author" content="{{page.author}}"/>
   {% endif %}
-  
+
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:creator" content="@kobotoolbox"/>
   <meta name="twitter:title" content="{{page.title}}"/>
-  
+
   {% if page.thumbnail %}
   <meta name="twitter:image" content="{{ page.thumbnail | prepend: site.baseurl }}"/>
   <meta property="og:image" content="{{ page.thumbnail | prepend: site.baseurl }}"/>
@@ -69,7 +69,7 @@
   <meta name="twitter:image" content="{{ site.default_og_image | prepend: site.baseurl }}"/>
   <meta property="og:image" content="{{ site.default_og_image | prepend: site.baseurl }}"/>
   {% endif %}
-  
+
   {% comment %}
   style and icons
   {% endcomment %}
