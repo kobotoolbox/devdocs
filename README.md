@@ -1,4 +1,4 @@
-[Documentation for developers](https://kobotoolbox.github.io)
+[Developer Documentation](https://kobotoolbox.github.io)
 
 ## Updating Documentation
 

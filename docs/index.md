@@ -1,5 +1,5 @@
 ---
-title: "KoBoToolbox Dev Docs"
+title: "KoBoToolbox Developer Documentation"
 layout: article
 ---
 
