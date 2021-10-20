@@ -19,7 +19,10 @@ If your http://kf.kobo.local/ is broken, try these things:
 9. Rerun migrations: `./run.py -cf exec kpi bash` and `./manage.py makemigrations` plus `./manage.py migrate`
 10. If you get this error for Docker on MacOS, try restarting docker: `ERROR: An HTTP request took too long to complete. Retry with --verbose to obtain debug information.`. You can also try increasing timeout by running `COMPOSE_HTTP_TIMEOUT=200 ./run.py`.
 
-Hardcore options:
+
+## Hardcore options
+
+![fire](/images/fire.gif "Fire!")
 
 1. Restart Docker.
 2. Wipe out database by removing `kobo-docker/.vols` directory.
