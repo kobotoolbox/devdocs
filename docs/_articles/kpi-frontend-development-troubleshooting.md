@@ -31,9 +31,10 @@ If your http://kf.kobo.local/ is broken, try these things:
    ```
    docker rm $(docker ps -a -q); docker rmi $(docker images -q); docker volume rm $(docker volume ls -qf dangling=true)
    ```
-5. Remove `kobo-docker` and `kobo-deployments` directories, and hard restart `kobo-install`: `python run.py --stop && python run.py --setup`.
-6. Sometimes old `.pyc` files causes errors while starting `kobo-install` (e.g. `ImportError: cannot import name KpiUidField`), use `find . -name "*.pyc" -type f -delete` in your kpi/kobocat local repository to fix it
-7. Restart your machine (srsly)
+5. If you can't stop or kill containers (e.g. `(…) tried to kill container, but did not receive an exit event`) use `docker rm -f $(docker ps -aq)`.
+6. Remove `kobo-docker` and `kobo-deployments` directories, and hard restart `kobo-install`: `python run.py --stop && python run.py --setup`.
+7. Sometimes old `.pyc` files causes errors while starting `kobo-install` (e.g. `ImportError: cannot import name KpiUidField`), use `find . -name "*.pyc" -type f -delete` in your kpi/kobocat local repository to fix it
+8. Restart your machine (srsly)
 
 ## Nginx bind issue
 
