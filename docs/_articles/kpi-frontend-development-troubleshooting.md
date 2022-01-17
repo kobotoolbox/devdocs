@@ -18,6 +18,7 @@ If your http://kf.kobo.local/ is broken, try these things:
 8. If you're on `kpi`'s non-`master` branch, try switching to `master` and see if problem still occurs.
 9. Rerun migrations: `./run.py -cf exec kpi bash` and `./manage.py makemigrations` plus `./manage.py migrate`
 10. If you get this error for Docker on MacOS, try restarting docker: `ERROR: An HTTP request took too long to complete. Retry with --verbose to obtain debug information.`. You can also try increasing timeout by running `COMPOSE_HTTP_TIMEOUT=200 ./run.py`.
+11. If you need to refresh static files (e.g. favicon), there is [a neat script for that](/files/refresh-frontend-files.sh).
 
 
 ## Hardcore options
