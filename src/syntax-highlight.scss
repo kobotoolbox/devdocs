@@ -1,7 +1,7 @@
 @use "colors";
 
 .highlighter-rouge table td {
-  padding: 0.25rem;
+  padding: 0.25em;
 }
 
 .highlighter-rouge table pre {
@@ -13,14 +13,14 @@
 }
 
 .highlighter-rouge {
-  padding: 0 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 0.9rem;
+  padding: 0 0.25em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
 }
 
 // for the block codes
 div.highlighter-rouge {
-  padding: 0.5rem;
+  padding: 0.5em;
 }
 
 .highlighter-rouge,
