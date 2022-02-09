@@ -9,6 +9,7 @@ _Note: we assume you used [kobo-install](https://github.com/kobotoolbox/kobo-ins
 If your http://kf.kobo.local/ is broken, try these things:
 
 1. Check out `python run.py --logs` output.
+  - Hint: you can use `./run.py -cf logs -f --tail 10 kpi` to only see latest logs. Useful if your instance is running for long time.
 2. Check http://kf.kobo.local/service_health/ status.
 3. You should probably be on `kobo-install` on `master` on latest commit -- see [Branching Reference](https://github.com/kobotoolbox/kpi/wiki/Branching-Reference) and if you're not behind.
 4. Restart `npm run watch`, as sometimes hot reloading chokes on itself.
@@ -34,7 +35,7 @@ If your http://kf.kobo.local/ is broken, try these things:
    ```
 5. If you can't stop or kill containers (e.g. `(…) tried to kill container, but did not receive an exit event`) use `docker rm -f $(docker ps -aq)`.
 6. Remove `kobo-docker` and `kobo-deployments` directories, and hard restart `kobo-install`: `python run.py --stop && python run.py --setup`.
-7. Sometimes old `.pyc` files causes errors while starting `kobo-install` (e.g. `ImportError: cannot import name KpiUidField`), use `find . -name "*.pyc" -type f -delete` in your kpi/kobocat local repository to fix it
+7. Sometimes old `.pyc` files causes errors while starting `kobo-install` (e.g. `ImportError: cannot import name KpiUidField`), use `find . -name "*.pyc" -type f -delete` in your kpi or kobocat local repository to fix it
 8. Restart your machine (srsly)
 
 ## Nginx bind issue
