@@ -9,7 +9,7 @@ The rules are:
 - Finish with a period only if it's a full sentence - e.g. not if it's a heading, short instruction, etc.
 - Always make punctuation part of the translated string (so that RTL languages don't start with a period, for example).
 - Use real ellipsis character (<code>…</code>) rather than three periods (<code>...</code>)<sup>1</sup>.
-- Remember that our name is capitalized like this: `KoboToolbox`.
+- Remember that our name is capitalized like this: `KoboToolbox` (and similarly `Kobo`).
 - For translated text with placeholders, please use a descriptive text and wrap it in double hashes. E.g. for `Do you live in ##country name## right now?` the placeholder is `##country name##`.
 
 If in doubt, please mimic what is already there.
