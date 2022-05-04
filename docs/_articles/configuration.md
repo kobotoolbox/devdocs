@@ -52,7 +52,6 @@ KPI supports local storage as well as django-storages supported backends. Refer 
 - AZURE_CONTAINER
 - AZURE_URL_EXPIRATION_SECS - Defaults to None
 - KOBOCAT_DEFAULT_FILE_STORAGE
-- KOBOCAT_AZURE_CONTAINER
 
 ### Development only
 
