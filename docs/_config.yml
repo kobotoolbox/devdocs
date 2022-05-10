@@ -1,5 +1,5 @@
-name: "KoBoToolbox Dev Docs"
-description: "KoBoToolbox documentation by developers for developers."
+name: "KoboToolbox Dev Docs"
+description: "KoboToolbox documentation by developers for developers."
 baseurl: "https://kobotoolbox.github.io"
 
 # site configuration

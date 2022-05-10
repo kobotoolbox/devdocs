@@ -91,7 +91,7 @@ The accepted strings for the value of `kobo--lock_all` are the same as in the `s
 
 ## XLSForm Configuration
 
-There are three sheets where locking profiles are defined and set: `survey`, `settings` and [`kobo--locking-profiles`](#kobo--locking-profiles). The sheet of `kobo--locking-profiles` is not officially supported by [pyxform](https://github.com/XLSForm/pyxform) and is KoBoToolbox-specific, [handled in FormPack](https://github.com/kobotoolbox/formpack/pull/238/files?file-filters%5B%5D=.py#diff-f57f6fb770f92cab2c8dee56f56aa6ae4a3da963caec75e02cc50ea26d67ab11R18-R79).
+There are three sheets where locking profiles are defined and set: `survey`, `settings` and [`kobo--locking-profiles`](#kobo--locking-profiles). The sheet of `kobo--locking-profiles` is not officially supported by [pyxform](https://github.com/XLSForm/pyxform) and is KoboToolbox-specific, [handled in FormPack](https://github.com/kobotoolbox/formpack/pull/238/files?file-filters%5B%5D=.py#diff-f57f6fb770f92cab2c8dee56f56aa6ae4a3da963caec75e02cc50ea26d67ab11R18-R79).
 
 Form-level restrictions are defined in the `settings` sheet and question and group-level restrictions are defined in the `survey` sheet.
 
@@ -259,7 +259,7 @@ Until uploading of XLSForms directly to `template`s [is implemented](https://cha
 - Frontend:
   - [kobotoolbox/kpi#3127](https://github.com/kobotoolbox/kpi/pull/3127)
 - [Project board](https://github.com/kobotoolbox/kpi/projects/4)
-- [Internal discussion](https://chat.kobotoolbox.org/#narrow/stream/4-KoBo-Dev/topic/Library.20locking)
+- [Internal discussion](https://chat.kobotoolbox.org/#narrow/stream/4-Kobo-Dev/topic/Library.20locking)
 
 ## Terminology
 
