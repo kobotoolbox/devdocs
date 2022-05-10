@@ -1,4 +1,4 @@
-@use "colors";
+@use 'colors';
 
 .article {
   padding: 2.5rem;
@@ -16,13 +16,13 @@
     color: colors.$kobo-gray-65;
   }
 
-  h1::before { content: "# "; }
-  h2::before { content: "## "; }
-  h3::before { content: "### "; }
-  h4::before { content: "#### "; }
+  h1::before {content: '# ';}
+  h2::before {content: '## ';}
+  h3::before {content: '### ';}
+  h4::before {content: '#### ';}
 
   // make it more obvious that a highlighted code is a link
   a code {
-    color: colors.$kobo-blue-pale;
+    color: colors.$kobo-mid-blue;
   }
 }

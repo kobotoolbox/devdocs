@@ -1,4 +1,4 @@
-@use "colors";
+@use 'colors';
 
 @media screen and (max-width: 799px) {
   .page__content {
@@ -21,6 +21,7 @@
     flex: 1;
     overflow-x: hidden;
     overflow-y: auto;
+
     // to fit reasonable number of characters in line (around 100)
     max-width: 60rem;
   }

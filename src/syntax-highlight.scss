@@ -1,4 +1,4 @@
-@use "colors";
+@use 'colors';
 
 .highlighter-rouge table td {
   padding: 0.25em;
@@ -31,7 +31,7 @@ div.highlighter-rouge {
 
 .highlighter-rouge .err {
   color: colors.$kobo-gray-24;
-  background-color: colors.$kobo-red-pale;
+  background-color: colors.$kobo-light-red;
 }
 
 .highlighter-rouge .c,
@@ -69,11 +69,11 @@ div.highlighter-rouge {
 }
 
 .highlighter-rouge .gd {
-  color: colors.$kobo-red-pale;
+  color: colors.$kobo-light-red;
 }
 
 .highlighter-rouge .gh {
-  color: colors.$kobo-blue-light;
+  color: colors.$kobo-light-blue;
   background-color: colors.$kobo-gray-24;
   font-weight: bold;
 }
@@ -83,19 +83,19 @@ div.highlighter-rouge {
 .highlighter-rouge .kp,
 .highlighter-rouge .kr,
 .highlighter-rouge .kv {
-  color: colors.$kobo-blue-light;
+  color: colors.$kobo-light-blue;
 }
 
 .highlighter-rouge .kc {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .kt {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .kd {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .s,
@@ -106,19 +106,19 @@ div.highlighter-rouge {
 .highlighter-rouge .sh,
 .highlighter-rouge .sx,
 .highlighter-rouge .s1 {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .sr {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .si {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .se {
-  color: colors.$kobo-teal-pale;
+  color: colors.$kobo-light-teal;
 }
 
 .highlighter-rouge .nn {
@@ -134,7 +134,7 @@ div.highlighter-rouge {
 }
 
 .highlighter-rouge .na {
-  color: colors.$kobo-blue-light;
+  color: colors.$kobo-light-blue;
 }
 
 .highlighter-rouge .m,
@@ -145,9 +145,9 @@ div.highlighter-rouge {
 .highlighter-rouge .mo,
 .highlighter-rouge .mb,
 .highlighter-rouge .mx {
-  color: colors.$kobo-blue-light;
+  color: colors.$kobo-light-blue;
 }
 
 .highlighter-rouge .ss {
-  color: colors.$kobo-blue-light;
+  color: colors.$kobo-light-blue;
 }

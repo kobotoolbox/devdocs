@@ -5,16 +5,13 @@
   "repository": "https://github.com/kobotoolbox/kobotoolbox.github.io.git",
   "bugs": "https://github.com/kobotoolbox/kobotoolbox.github.io/issues",
   "scripts": {
-    "_styles-compile": "sass src/style.scss docs/style.css",
+    "_styles-compile": "sass --load-path=node_modules/kobo-common/src/styles src/style.scss docs/style.css",
     "_styles-prefix": "postcss docs/style.css --use=autoprefixer --map=false --output=docs/style.css",
     "styles-watch": "npm run _styles-compile -- --watch",
     "styles-build": "npm run _styles-compile && npm run _styles-prefix",
     "jekyll-build": "jekyll build --source docs",
     "jekyll-serve": "jekyll serve --watch --baseurl '' --source docs"
   },
-  "browserslist": [
-    "last 4 version"
-  ],
   "engines": {
     "node": ">=16.5.0"
   },
@@ -24,6 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^10.3.7",
     "browserslist": "^4.17.4",
+    "kobo-common": "https://github.com/kobotoolbox/kobo-common.git#semver:1.17.0",
     "postcss": "^8.3.9",
     "postcss-cli": "^9.0.1",
     "pre-commit": "^1.2.2",

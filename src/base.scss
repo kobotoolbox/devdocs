@@ -1,4 +1,4 @@
-@use "colors";
+@use 'colors';
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,12 @@ body {
   margin: 0;
 }
 
-html, body, input, textarea, select, button {
+html,
+body,
+input,
+textarea,
+select,
+button {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -50,7 +55,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px dotted currentColor;
+  border-top: 1px dotted currentcolor;
   margin: 1em 0;
   padding: 0;
 }
@@ -78,7 +83,7 @@ blockquote {
 }
 
 table {
-  border: 1px dotted currentColor;
+  border: 1px dotted currentcolor;
   border-spacing: 0;
   border-collapse: collapse;
 
@@ -88,7 +93,7 @@ table {
 
   tr th,
   tr td {
-    border: 1px dotted currentColor;
+    border: 1px dotted currentcolor;
     padding: 0.5rem;
   }
 
