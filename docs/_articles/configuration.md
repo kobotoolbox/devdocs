@@ -2,7 +2,7 @@
 title: KoboToolbox Configuration
 ---
 
-This page documents configuration environment variables which may be useful when configuring in a declarative manner. An alternative is to use [kobo-install](github.com/kobotoolbox/kobo-install) for an interactive installation.
+This page documents configuration environment variables which may be useful when configuring in a declarative manner. An alternative is to use [kobo-install](https://github.com/kobotoolbox/kobo-install) for an interactive installation.
 
 # Environment Variables
 
