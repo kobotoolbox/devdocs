@@ -15,7 +15,6 @@ This page documents configuration environment variables which may be useful when
 **Optional**
 
 - GOOGLE_ANALYTICS_TOKEN
-- RAVEN_JS_DSN
 
 ### Security Headers
 
@@ -60,6 +59,14 @@ KPI supports local storage as well as django-storages supported backends. Refer 
 - AZURE_CONTAINER
 - AZURE_URL_EXPIRATION_SECS - Defaults to None
 - KOBOCAT_DEFAULT_FILE_STORAGE
+
+### Sentry error monitoring
+
+Configure the Sentry SDK client to send error and performance reports to a service like Sentry, GitLab, or GlitchTip.
+
+- SENTRY_DSN - Disabled by default. Should look something like `https://<public_key>@server/<project_id>`
+- SENTRY_TRACES_SAMPLE_RATE - Defaults to `0.05`. Set to the percent of requests to send performance traces. Or `0.0` for disabled.
+- RAVEN_JS_DSN - Disabled by default. Same as SENTRY_DSN but for the JavaScript frontend.
 
 ### Development only
 
