@@ -20,7 +20,7 @@ If your http://kf.kobo.local/ is broken, try these things:
 9. Rerun migrations: `./run.py -cf exec kpi bash` and `./manage.py makemigrations` plus `./manage.py migrate`
 10. If you get this error for Docker on MacOS, try restarting docker: `ERROR: An HTTP request took too long to complete. Retry with --verbose to obtain debug information.`. You can also try increasing timeout by running `COMPOSE_HTTP_TIMEOUT=200 ./run.py`.
 11. If you need to refresh static files (e.g. favicon), there is [a neat script for that](/files/refresh-frontend-files.sh).
-
+12. If `npm install` is failing, check your `npm --version` and compare with one that is known to work. Sometimes when you install node you get a different npm version than everyone else has. Apparently the dependency resolution algorithm can behave differently even between minor versions, like `8.5.5` vs `8.11`. You can use your npm to install a different version, for example, `npm install -g npm@8.5.5`.
 
 ## Hardcore options
 
