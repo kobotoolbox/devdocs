@@ -15,6 +15,10 @@ This page documents configuration environment variables which may be useful when
 **Optional**
 
 - GOOGLE_ANALYTICS_TOKEN
+- MONGO_DB_URL - Defaults to `mongodb://mongo:@mongo:27017/formhub`. MongoDB connection string.
+- MONGO_DB_NAME - Defaults to `formhub`. MongoDB database name. Necessary when defining multiple MongoDB replica sets in MONGO_DB_URL.
+- CELERY_AUTOSCALE_MIN - Defaults to `2`. Minimum number of celery workers (per instance)
+- CELERY_AUTOSCALE_MAX - Defaults to `2`. Maximum number of celery workers (per instance)
 
 ### Security Headers
 
