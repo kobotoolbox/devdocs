@@ -81,3 +81,12 @@ This happens because Node doesn't have enough memory. To fix that, either try up
 ```
 export NODE_OPTIONS="--max-old-space-size=8192"
 ```
+
+### No styles on admin page
+
+When you use `kobo-install` with option to run `npm` locally, sometimes you can end up with `/api/` and `/admin/` pages missing CSS files. To fix that you need to:
+
+1. Enter KPI container: `./run.py -cf exec kpi bash`.
+2. Run `python manage.py collectstatic --noinput`.
+3. Run `rsync -aq --chown=www-data "${KPI_SRC_DIR}/staticfiles/" "${NGINX_STATIC_DIR}/"`
+4. Exit container and restart Nginx: `./run.py -cf restart nginx`
