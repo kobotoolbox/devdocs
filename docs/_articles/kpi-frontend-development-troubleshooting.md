@@ -86,6 +86,8 @@ This happens because Node doesn't have enough memory. To fix that, either try up
 export NODE_OPTIONS="--max-old-space-size=8192"
 ```
 
+Note: If you happen to get this error inside Docker container (e.g. while running `kobo-install`), you might need to allocate more resources to Docker app.
+
 ### No styles on admin page
 
 When you use `kobo-install` with option to run `npm` locally, sometimes you can end up with `/api/` and `/admin/` pages missing CSS files. To fix that you need to:
