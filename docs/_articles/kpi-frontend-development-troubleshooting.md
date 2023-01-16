@@ -17,7 +17,7 @@ If your http://kf.kobo.local/ is broken, try these things:
 6. Restart `kobo-install` instance: `python run.py --stop && python run.py`.
 7. When there are `kpi` Backend changes on your branch, you may need to rebuild it: `./run.py -cf build kpi`.
 8. If you're on `kpi`'s non-`master` branch, try switching to `master` and see if problem still occurs.
-9. Rerun migrations: `./run.py -cf exec kpi bash` and `./manage.py makemigrations` plus `./manage.py migrate`
+9. Rerun migrations: `./run.py -cf exec kpi bash` and `./manage.py migrate`
 10. If you get this error for Docker on MacOS, try restarting docker: `ERROR: An HTTP request took too long to complete. Retry with --verbose to obtain debug information.`. You can also try increasing timeout by running `COMPOSE_HTTP_TIMEOUT=200 ./run.py`.
 11. If you need to refresh static files (e.g. favicon), there is [a neat script for that](/files/refresh-frontend-files.sh).
 12. If `npm install` is failing, check your `npm --version` and compare with one that is known to work. Sometimes when you install node you get a different npm version than everyone else has. Apparently the dependency resolution algorithm can behave differently even between minor versions, like `8.5.5` vs `8.11`. You can use your npm to install a different version, for example, `npm install -g npm@8.5.5`.
@@ -96,3 +96,15 @@ When you use `kobo-install` with option to run `npm` locally, sometimes you can 
 2. Run `python manage.py collectstatic --noinput`.
 3. Run `rsync -aq --chown=www-data "${KPI_SRC_DIR}/staticfiles/" "${NGINX_STATIC_DIR}/"`
 4. Exit container and restart Nginx: `./run.py -cf restart nginx`
+
+### kobo-install self restarting death loop
+
+Sometimes `./run.py` is stuck in a loop of containters restaring endlessly. This can happen because of missing database migrations (e.g. you pulled some commits that contains back-end changes). When this happens you would see something like `django.db.utils.ProgrammingError: relation "settings__country_codes_idx" already exists` (or other error just after `Running migrations:` line). To fix that try:
+
+1. Enter the kpi container: `./run.py -cf exec kpi bash`
+2. Run migrations: `./manage.py migrate kpi`
+
+Sometimes the error is a bit different, if so try some of these tricks:
+- tell database that all migrations are applied: `./manage.py migrate kpi --fake` and then go back few migrations and re-run migrations
+- go back few migrations: `./manage.py migrate kpi 0001` (you can put any migration identifier number here)
+- if you get kicked out of kpi container, try `./run.py cf run --rm kpi bash` (this one will not get ejected, and you can fix issues from within)
