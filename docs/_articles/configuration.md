@@ -77,8 +77,8 @@ Configure the Sentry SDK client to send error and performance reports to a servi
 
 Variables map to [django-allauth configuration](https://django-allauth.readthedocs.io/en/latest/configuration.html). Supported options:
 
-- ACCOUNT_EMAIL_VERIFICATION
-- SOCIALACCOUNT_EMAIL_VERIFICATION
+- ACCOUNT_EMAIL_VERIFICATION - Defaults to "mandatory"
+- SOCIALACCOUNT_EMAIL_VERIFICATION - Defaults to "none"
 - SOCIALACCOUNT_PROVIDERS - match allauth configuration by specifiying `_` to denote keys in a dictionary and numbers to indicate indexes in an array. Examples
   - SOCIALACCOUNT_PROVIDERS_microsoft_TENANT maps to allauth's `SOCIALACCOUNT_PROVIDERS = {"microsoft": {"TENANT": <value>}}`
   - SOCIALACCOUNT_PROVIDERS_openid_connect_SERVERS_0_server_url maps to `{"SOCIALACCOUNT_PROVIDERS": {"openid_connect": {"SERVERS": [{"SERVER_URL": <value>}]}}}`
