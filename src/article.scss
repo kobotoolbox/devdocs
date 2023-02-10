@@ -9,20 +9,37 @@
 }
 
 .article__content {
-  h1::before,
-  h2::before,
-  h3::before,
-  h4::before {
-    color: colors.$kobo-gray-65;
+
+  max-width: 75ch;
+
+  h1 {
+    border-bottom: 1px solid colors.$kobo-mid-blue;
   }
 
-  h1::before {content: '# ';}
-  h2::before {content: '## ';}
-  h3::before {content: '### ';}
-  h4::before {content: '#### ';}
+  // h1::before,
+  // h2::before,
+  // h3::before,
+  // h4::before {
+  //   color: colors.$kobo-gray-65;
+  // }
+
+  // h1::before {content: '# ';}
+  // h2::before {content: '## ';}
+  // h3::before {content: '### ';}
+  // h4::before {content: '#### ';}
 
   // make it more obvious that a highlighted code is a link
   a code {
-    color: colors.$kobo-mid-blue;
+    color: colors.$kobo-dark-blue;
+  }
+
+  li {
+    margin: 0.25em 0;
+  }
+  li::marker {
+    color: colors.$kobo-storm;
+  }
+  p {
+    margin: 1em 0;
   }
 }
