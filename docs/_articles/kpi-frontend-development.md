@@ -4,17 +4,17 @@ title: KPI Frontend Development
 
 ## Code style
 
-- Use prettier on all new and modified code. Be aware that older code may not conform. Use an editor that respects .editorconfig.
-- Use CSS modules. Do not use BEM style class names, unless appropriate for complex or global CSS. Do not use the "makeBem" utility.
+- Use Prettier on all new and modified code. Be aware that older code may not conform. Use an editor that respects `.editorconfig`.
+- Use CSS modules. Do not use BEM style class names, unless appropriate for complex or global CSS. Do not use the `makeBem` utility.
 - Use TypeScript. If modifying a non-TypeScript file, update it to TypeScript.
 - Use React functional components and hooks.
-- Prefer one React component per file and smaller files
+- Prefer one React component per file and smaller files.
 - Organize code by feature. Use directory structures like `/settings/emails` instead of `/components`.
-- Include type of file in filename. Such as `foo.interface.ts`, `foo.reducer.ts`, `foo.module.scss`, or `foo.component.tsx`
-- Include storybook stories as sibling file. `foo.component.stories.tsx`
-- Avoid dependencies when practical. Prefer fetch over Jquery.
-- For state, use React's useState, useReducer, useContext. Or use mobx. Do not use reflux. When working with reflux, convert it to mobx which may be easier than converting to react's state management.
-- Avoid deep relative paths in imports. Do not import `../../../foo/bar/far.ts`
+- Include type of file in filename. Such as `foo.interface.ts`, `foo.reducer.ts`, `foo.module.scss`, or `foo.component.tsx`.
+- Include storybook stories as sibling file. `foo.component.stories.tsx`.
+- Avoid dependencies when practical. Prefer `fetch` (see `api.ts` file) over `JQuery.ajax`.
+- For state, use React's `useState`, `useReducer`, `useContext`. Or use MobX. Do not use Reflux. When working with Reflux, convert it to MobX which may be easier than converting to React's state management.
+- Avoid deep relative paths in imports. Do not import `../../../foo/bar/far.ts`.
 
 ## Workflow
 
