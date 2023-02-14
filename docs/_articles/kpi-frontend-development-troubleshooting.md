@@ -109,3 +109,26 @@ Sometimes the error is a bit different, if so try some of these tricks:
 - tell database that all migrations are applied: `./manage.py migrate kpi --fake` and then go back few migrations and re-run migrations
 - go back few migrations: `./manage.py migrate kpi 0001` (you can put any migration identifier number here)
 - if you get kicked out of kpi container, try `./run.py cf run --rm kpi bash` (this one will not get ejected, and you can fix issues from within)
+
+### kobo-install re-run "cannot stop container"
+
+Sometimes when re-running `./run.py` the script will have a problem stopping some containers. E.g.:
+
+```
+Stopping kobofe_kobocat_1        ... done
+Stopping kobofe_nginx_1          ... done
+Stopping kobofe_kpi_1            ... done
+Stopping kobofe_enketo_express_1 ... done
+Removing kobofe_kobocat_1        ... done
+Removing kobofe_nginx_1          ... done
+Removing kobofe_kpi_1            ... done
+Removing kobofe_enketo_express_1 ... done
+Removing network kobofe_kobo-fe-network
+Network kobobe_kobo-be-network is external, skipping
+Stopping kobobe_redis_main_1  ... error
+Stopping kobobe_postgres_1    ... error
+Stopping kobobe_redis_cache_1 ... error
+Stopping kobobe_mongo_1       ... error
+```
+
+If you see that, and you are no Mac, try restarting Docker app.
