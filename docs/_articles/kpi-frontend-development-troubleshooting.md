@@ -115,20 +115,12 @@ Sometimes the error is a bit different, if so try some of these tricks:
 Sometimes when re-running `./run.py` the script will have a problem stopping some containers. E.g.:
 
 ```
-Stopping kobofe_kobocat_1        ... done
-Stopping kobofe_nginx_1          ... done
-Stopping kobofe_kpi_1            ... done
-Stopping kobofe_enketo_express_1 ... done
-Removing kobofe_kobocat_1        ... done
-Removing kobofe_nginx_1          ... done
-Removing kobofe_kpi_1            ... done
-Removing kobofe_enketo_express_1 ... done
-Removing network kobofe_kobo-fe-network
-Network kobobe_kobo-be-network is external, skipping
+(…)
 Stopping kobobe_redis_main_1  ... error
-Stopping kobobe_postgres_1    ... error
-Stopping kobobe_redis_cache_1 ... error
-Stopping kobobe_mongo_1       ... error
+(…)
+ERROR: for kobobe_redis_main_1  cannot stop container: 59672659abeec9aafc7f979dfd920a855cf3a36d798fa1fe92f42e5ec117a1a4: tried to kill container, but did not receive an exit event
+(…)
+An error has occurred
 ```
 
-If you see that, and you are no Mac, try restarting Docker app.
+If you see that, and you are on Mac, try restarting your Docker app.
