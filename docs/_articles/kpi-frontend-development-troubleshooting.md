@@ -124,3 +124,23 @@ An error has occurred
 ```
 
 If you see that, and you are on Mac, try restarting your Docker app.
+
+### kobo-install fails to build because of "invalid signature"
+
+If you encounter similar error to the one below while running `./run.py --build`, the way to fix it is to cleanup your docker, as it possibly ran out of space. Try running prune or the more complex command from "Hardcore options" above.
+
+```
+ => ERROR [stage-1  3/18] RUN apt-get -qq update &&     apt-get -qq -y install curl &&     curl -sL https://deb.nodesource.com/setup_16.x | bash - &&     apt-ge  0.6s
+------
+ > [stage-1  3/18] RUN apt-get -qq update &&     apt-get -qq -y install curl &&     curl -sL https://deb.nodesource.com/setup_16.x | bash - &&     apt-get -qq -y install --no-install-recommends         ffmpeg         gdal-bin         gettext         git         gosu         less         libproj-dev         locales         nodejs         postgresql-client         rsync         runit-init         vim-tiny         wait-for-it &&     apt-get clean &&         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*:
+#7 0.586 W: GPG error: http://deb.debian.org/debian bullseye InRelease: At least one invalid signature was encountered.
+#7 0.586 E: The repository 'http://deb.debian.org/debian bullseye InRelease' is not signed.
+#7 0.586 W: GPG error: http://deb.debian.org/debian-security bullseye-security InRelease: At least one invalid signature was encountered.
+#7 0.586 E: The repository 'http://deb.debian.org/debian-security bullseye-security InRelease' is not signed.
+#7 0.586 W: GPG error: http://deb.debian.org/debian bullseye-updates InRelease: At least one invalid signature was encountered.
+#7 0.586 E: The repository 'http://deb.debian.org/debian bullseye-updates InRelease' is not signed.
+------
+executor failed running [/bin/sh -c apt-get -qq update &&     apt-get -qq -y install curl &&     curl -sL https://deb.nodesource.com/setup_16.x | bash - &&     apt-get -qq -y install --no-install-recommends         ffmpeg         gdal-bin         gettext         git         gosu         less         libproj-dev         locales         nodejs         postgresql-client         rsync         runit-init         vim-tiny         wait-for-it &&     apt-get clean &&         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*]: exit code: 100
+ERROR: Service 'kpi' failed to build : Build failed
+An error has occurred
+```
