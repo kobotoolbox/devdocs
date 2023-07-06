@@ -2,6 +2,12 @@
 
 ## Updating Documentation
 
+You can make simple changes using the GitHub editor ([example 📝](https://github.com/kobotoolbox/kobotoolbox.github.io/edit/main/docs/_articles/kpi-frontend-development.md)).
+
+To run a preview server locally, you'll need `npm`, `ruby`, and `jekyll`. [^1]
+
+[^1]: **macos** comes with a system ruby, but it might not let you install gems like jekyll. The jekyll docs recommend something that failed after brew tried to compile lots of code. Instead I went with (1) `brew install ruby` (no version pin). (2) Use the brew ruby and move the gems folder — in `~/.bashrc` or `~/.zshrc`, `export GEM_HOME=$HOME/gems; export PATH="$(brew --prefix)/opt/ruby/bin:$HOME/gems/bin:$PATH"`. (3) `gem install jekyll`.
+
 ### Building local instance
 
 1. `npm install`
