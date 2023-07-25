@@ -23,7 +23,9 @@ echo 'Press return to proceed, or CTRL+C to exit.'
 read trash
 
 echo 'Looking for KPI images…'
-latest_kpi_image=$(kobo-install/run.py -cf images | grep _kpi_ | awk '{print $4}')
+# The grep used to look for something like "kobofe_kpi_1", but since some time it
+# become "kobofe-kpi-1", so :shrug:
+latest_kpi_image=$(kobo-install/run.py -cf images | grep -- "-kpi-" | awk '{print $4}')
 echo 'The latest KPI image found is:'
 docker images | sed -n "1p;/$latest_kpi_image/p"
 echo
