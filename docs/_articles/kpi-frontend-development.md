@@ -1,14 +1,14 @@
 ---
-title: KPI Frontend Development
+title: KPI Front-end Development
 ---
 
 ## Code style
 
 Our goal:
-- TypeScript
+- Prettified code
+- TypeScript (everything typed)
 - React functional components and hooks
-- CSS Modules
-- Prettified
+- CSS Modules (written in SCSS)
 
 ### More details
 
@@ -48,6 +48,7 @@ JS:
 - We use JSDoc comments to describe classes, functions, variables, and properties. We use regular comments for everything else.
 - Use `t()` for every Front-end facing static string.
   - `/kpi/jsapp/js/i18nMissingStrings.es6` file holds all the strings we want to translate but don't appear in our Front-end code
+- At minimum write tests for utility functions
 
 CSS:
 - Use CSS modules. Do not use BEM style class names, unless appropriate for complex or global CSS. Do not use the deprecated `makeBem` utility.
