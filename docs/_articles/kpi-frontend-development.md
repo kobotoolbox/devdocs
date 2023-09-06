@@ -25,9 +25,12 @@ Dependencies:
   - Prefer ES6 built-ins over `lodash`.
 
 File architecture:
-- Organize code by feature or route. Use directory structures like `/settings/emails` instead of `/components`.
-- Prefer one React component per file and smaller files.
-  - Splitting into multiple files is nice, but not always useful.
+- Organize code by feature, route or some other logical division. Use directory structures like `/settings/emails` instead of `/components`.
+- Some directories we use:
+  - `js/hooks` - for custom hooks that are shared between multiple components in different routes/features
+  - `js/components/common` - for simple general components like button or checkbox
+- Prefer one React component per file.
+- Prefer smaller files. Avoid splitting into multiple files if it would be harder to work with/understand the divided code.
 - Include type of file in filename. Such as:
   - `foo.interface.ts`
   - `foo.reducer.ts`
@@ -36,10 +39,7 @@ File architecture:
   - `foo.component.tsx`
   - `useFoo.hook.ts`
 - Move TypeScript types and interfaces to separate file if it would be beneficial (e.g. long complex interface requires a lot of scrolling to get to the actual component code).
-- Some directories we use:
-  - `js/hooks` - for custom hooks that are shared between multiple components in different routes/features
-  - `js/components/common` - for simple general components like button or checkbox
-- Include storybook stories or tests as sibling file (e.g. `button.component.tsx` next to `button.stories.tsx`).
+- Include Storybook stories or tests as sibling file (e.g. `button.component.tsx` next to `button.stories.tsx`).
 - Avoid deep relative paths in imports. Do not import `../../../foo/bar/far.ts`.
 
 JS:
@@ -55,8 +55,7 @@ JS:
 CSS:
 - Use CSS modules. Do not use BEM style class names, unless appropriate for complex or global CSS. Do not use the deprecated `makeBem` utility.
 - We use autoprefixer, so no need to add prefixes manually.
-- Avoid adding new colors to stylesheets. We have [a list of all available colors](https://github.com/kobotoolbox/kobo-common/blob/main/src/styles/colors.scss) defined at `kobo-common` package. If the design contains a color that is very similar to existing one - use that color. If it's completely new color, please discuss adding it to the list.
-
+- Avoid adding new colors to stylesheets. We have [a list of all available colors](https://github.com/kobotoolbox/kobo-common/blob/main/src/styles/colors.scss) defined at `kobo-common` package. If the design contains a color that is very similar to existing one - use that color. If it's completely new color, please discuss adding it to the list with Design Team or Front End Lead.
 
 ## Workflow
 
