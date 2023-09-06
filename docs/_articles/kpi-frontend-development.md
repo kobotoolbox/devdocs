@@ -20,7 +20,9 @@ General:
 Dependencies:
 - Use React functional components and hooks.
 - For state, use React's `useState`, `useReducer`, `useContext`. When working with Reflux, we are ok with converting it to MobX if it may be a lot easier than converting to React's state management.
-- Avoid dependencies when practical. Prefer `fetch` (see `api.ts` file) over `JQuery.ajax`.
+- Avoid dependencies when practical.
+  - Prefer `fetch*` ([see `api.ts` file](https://github.com/kobotoolbox/kpi/blob/main/jsapp/js/api.ts)) over `JQuery.ajax`.
+  - Prefer ES6 built-ins over `lodash`.
 
 File architecture:
 - Organize code by feature or route. Use directory structures like `/settings/emails` instead of `/components`.
