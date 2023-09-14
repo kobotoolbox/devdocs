@@ -1,5 +1,5 @@
 ---
-title: KPI Frontend Development Troubleshooting
+title: KPI Front-end Development Troubleshooting
 ---
 
 _Note: we assume you used [kobo-install](https://github.com/kobotoolbox/kobo-install) to setup your development environment._
