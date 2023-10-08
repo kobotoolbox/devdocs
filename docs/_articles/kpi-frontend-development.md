@@ -90,3 +90,12 @@ Steps to take when adding new icon:
 6. Run the new `svg` file through [ImageOptim.app](https://imageoptim.com) or some alternative non-destructive SVG compressor
 7. Run `npm run generate-icons`
 8. Use your new icon: `<i className='k-icon k-icon-<icon-name>'/>`
+
+## Getting translations
+
+Getting latest translations strings on local environment requires few steps:
+
+1. In your `kpi` directory, navigate into `/locale`
+2. Do a `git pull`\
+3. In your `kobo-install` directory, enter container: `./run.py -cf exec kpi bash`
+4. Run `./manage.py compilemessages`
