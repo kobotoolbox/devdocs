@@ -96,6 +96,6 @@ Steps to take when adding new icon:
 Getting latest translations strings on local environment requires few steps:
 
 1. In your `kpi` directory, navigate into `/locale`
-2. Do a `git pull`\
+2. Do a `git pull`
 3. In your `kobo-install` directory, enter container: `./run.py -cf exec kpi bash`
 4. Run `./manage.py compilemessages`
