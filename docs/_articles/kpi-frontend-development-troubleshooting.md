@@ -108,7 +108,7 @@ Sometimes `./run.py` is stuck in a loop of containters restaring endlessly. This
 Sometimes the error is a bit different, if so try some of these tricks:
 - tell database that all migrations are applied: `./manage.py migrate kpi --fake` and then go back few migrations and re-run migrations
 - go back few migrations: `./manage.py migrate kpi 0001` (you can put any migration identifier number here)
-- if you get kicked out of kpi container, try `./run.py cf run --rm kpi bash` (this one will not get ejected, and you can fix issues from within)
+- if you get kicked out of kpi container, try `./run.py -cf run --rm kpi bash` (this one will not get ejected, and you can fix issues from within)
 
 ### kobo-install re-run "cannot stop container"
 
