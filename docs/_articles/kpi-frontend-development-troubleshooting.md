@@ -113,7 +113,6 @@ Sometimes the error is a bit different, if so try some of these tricks:
 
 If you ever get kicked out of a container, one of the following commands will get you save and not ejected. Use these if you need to fix something from within the container.
 
-
 For Front end containers use:
 
 ```
