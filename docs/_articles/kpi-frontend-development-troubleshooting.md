@@ -108,7 +108,23 @@ Sometimes `./run.py` is stuck in a loop of containters restaring endlessly. This
 Sometimes the error is a bit different, if so try some of these tricks:
 - tell database that all migrations are applied: `./manage.py migrate kpi --fake` and then go back few migrations and re-run migrations
 - go back few migrations: `./manage.py migrate kpi 0001` (you can put any migration identifier number here)
-- if you get kicked out of kpi container, try `./run.py -cf run --rm kpi bash` (this one will not get ejected, and you can fix issues from within)
+
+### kobo-install how to enter container that is self restarting
+
+If you ever get kicked out of a container, one of the following commands will get you save and not ejected. Use these if you need to fix something from within the container.
+
+
+For Front end containers use:
+
+```
+./run.py -cf run --rm <container name> bash
+```
+
+For Back end containers use:
+
+```
+./run.py -cb run --rm <container name> bash
+```
 
 ### kobo-install re-run "cannot stop container"
 
@@ -143,4 +159,21 @@ If you encounter similar error to the one below while running `./run.py --build`
 executor failed running [/bin/sh -c apt-get -qq update &&     apt-get -qq -y install curl &&     curl -sL https://deb.nodesource.com/setup_16.x | bash - &&     apt-get -qq -y install --no-install-recommends         ffmpeg         gdal-bin         gettext         git         gosu         less         libproj-dev         locales         nodejs         postgresql-client         rsync         runit-init         vim-tiny         wait-for-it &&     apt-get clean &&         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*]: exit code: 100
 ERROR: Service 'kpi' failed to build : Build failed
 An error has occurred
+```
+
+### kobo-install has access denied error for `koboform_base`
+
+If you see this:
+
+```
+./run.py --build
+Error response from daemon: pull access denied for kobotoolbox/koboform_base, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+Using default tag: latest
+An error has occurred
+```
+
+Try this:
+
+```
+./run.py -cf build --no-cache --force-rm kobocat
 ```
