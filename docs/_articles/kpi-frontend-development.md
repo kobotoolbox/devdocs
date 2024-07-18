@@ -4,8 +4,7 @@ title: KPI Front-end Development
 
 ## Code style
 
-Our goal:
-- Prettified code
+Our goals:
 - TypeScript (everything typed)
 - React functional components and hooks
 - CSS Modules (written in SCSS)
@@ -13,7 +12,9 @@ Our goal:
 ### More details
 
 General:
-- Use Prettier on all new and modified code. Be aware that older code may not conform.
+- Use Prettier on all new and modified code.
+  - Treat it as imperfect cleanup and tidy up the code to be easier to read after it runs.
+  - Be aware that older code may not conform.
 - Use an editor that respects `.editorconfig`.
 - Use TypeScript. If modifying a non-TypeScript file, update it to TypeScript.
 
@@ -38,6 +39,9 @@ File architecture:
   - `foo.module.scss`
   - `foo.component.tsx`
   - `useFoo.hook.ts`
+  - `foo.types.ts`
+  - `foo.utils.ts`
+  - `foo.store.ts`
 - Move TypeScript types and interfaces to separate file if it would be beneficial (e.g. long complex interface requires a lot of scrolling to get to the actual component code).
 - Include Storybook stories or tests as sibling file (e.g. `button.component.tsx` next to `button.stories.tsx`).
 - Avoid deep relative paths in imports. Do not import `../../../foo/bar/far.ts`.
@@ -47,15 +51,27 @@ JS:
   - `isLoading` - means waiting for some async fetch of data (may switch value back and forth).
   - `isFirstLoadComplete` - means that all the data necessary for displaying a component was gathered, and the UI was displayed to the user (we also have `isInitialised` in our codebase, but it's not as precise, and thus deprecated)
 - Comments are good, we like comments. It's good to write a short description of a component or utlity function, or to explain some complex code step-by-step.
+  - Bonus: if you're trying to understand some code for the first time, it's probably a perfect moment to add some comments for the next adventurer :).
 - We use JSDoc comments to describe classes, functions, variables, and properties. We use regular comments for everything else.
 - Use `t()` for every Front-end facing static string.
-  - `/kpi/jsapp/js/i18nMissingStrings.es6` file holds all the strings we want to translate but don't appear in our Front-end code
-- At minimum write tests for utility functions
+  - `/kpi/jsapp/js/i18nMissingStrings.es6` file holds all the strings we want to translate but don't appear in our Front-end code.
+- At minimum write tests for utility functions.
 
 CSS:
 - Use CSS modules. Do not use BEM style class names, unless appropriate for complex or global CSS. Do not use the deprecated `makeBem` utility.
 - We use autoprefixer, so no need to add prefixes manually.
-- Avoid adding new colors to stylesheets. We have [a list of all available colors](https://github.com/kobotoolbox/kobo-common/blob/main/src/styles/colors.scss) defined at `kobo-common` package. If the design contains a color that is very similar to existing one - use that color. If it's completely new color, please discuss adding it to the list with Design Team or Front End Lead.
+- Avoid adding new colors to stylesheets. We have an existing [list of all available colors](https://github.com/kobotoolbox/kpi/blob/main/jsapp/scss/colors.scss). If the design contains a color that is very similar to existing one - use that color. If it's completely new color, please discuss adding it to the list with Design Team or Front-End Lead.
+
+## Common components
+
+These are Buttons, Checkboxes, and many other common/atomic UI elements. The aim is to write DRY code and build beautiful, consistent UI. We gather them all in `js/components/common` directory, but you can see them all in action at our [storybook](https://storybook.kbtdev.org).
+
+Please:
+- Make sure you know what we have.
+- Avoid creating custom one-shots that are very similar to existing common components.
+- Adding new option to common component (size, color, etc.) shouldn't be done lightly.
+  - Make sure to update the story file for the component if you ever add that option.
+- If in doubt, please refer to Design Team or Front-End Lead.
 
 ## Workflow
 
