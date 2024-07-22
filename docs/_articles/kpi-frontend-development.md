@@ -2,6 +2,10 @@
 title: KPI Front-end Development
 ---
 
+## Helpful(?) tips
+
+- When debugging, consider eliminating (or confirming) the per-asset cache [(#4835)](https://github.com/kobotoolbox/kpi/pull/4835) as the source of the problem as early as possible. Do so by forcing [`refresh = true` in `loadAsset`](https://github.com/kobotoolbox/kpi/blob/eb21fe685397b2acc17fd36e2b4d7646c99c8bf2/jsapp/js/actions.es6#L427). For a list of issues related to this caching, refer to https://github.com/kobotoolbox/kpi/issues?q=%234835. We intend to replace this caching mechanism, but probably not until 2025. [[internal discussion]](https://chat.kobotoolbox.org/#narrow/stream/4-Kobo-Dev/topic/Deduping.20asset.2Fpermission.20API.20calls/near/424092)
+
 ## Code style
 
 Our goals:
