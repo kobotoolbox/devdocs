@@ -4,18 +4,18 @@ title: KPI Front-end Development
 
 ## Code style
 
-Our goal:
-- Prettified code
-- TypeScript (everything typed)
+Our goals:
+- TypeScript (and everything typed)
 - React functional components and hooks
-- CSS Modules (written in SCSS)
+- CSS Modules
 
 ### More details
 
 General:
-- Use Prettier on all new and modified code. Be aware that older code may not conform.
+- Use Prettier on all new and modified code.
+  - Treat it as imperfect cleanup and tidy up the code (so it's easier to read) after it runs.
+  - Be aware that older code may not conform.
 - Use an editor that respects `.editorconfig`.
-- Use TypeScript. If modifying a non-TypeScript file, update it to TypeScript.
 
 Dependencies:
 - Use React functional components and hooks.
@@ -23,6 +23,7 @@ Dependencies:
 - Avoid dependencies when practical.
   - Prefer `fetch*` ([see `api.ts` file](https://github.com/kobotoolbox/kpi/blob/main/jsapp/js/api.ts)) over `JQuery.ajax`.
   - Prefer ES6 built-ins over `lodash`.
+- Use `classnames` as `import cx from 'classnames';` to set class names conditionally.
 
 File architecture:
 - Organize code by feature, route or some other logical division. Use directory structures like `/settings/emails` instead of `/components`.
@@ -38,24 +39,41 @@ File architecture:
   - `foo.module.scss`
   - `foo.component.tsx`
   - `useFoo.hook.ts`
+  - `foo.types.ts`
+  - `foo.utils.ts`
+  - `foo.store.ts`
+  - `foo.tests.ts`
 - Move TypeScript types and interfaces to separate file if it would be beneficial (e.g. long complex interface requires a lot of scrolling to get to the actual component code).
-- Include Storybook stories or tests as sibling file (e.g. `button.component.tsx` next to `button.stories.tsx`).
+- Include Storybook stories or tests as sibling file (e.g. `button.stories.tsx` next to `button.component.tsx`).
 - Avoid deep relative paths in imports. Do not import `../../../foo/bar/far.ts`.
 
 JS:
+- Use TypeScript. If modifying a non-TypeScript file, update it to TypeScript.
 - Use `isSomething`/`hasSomething` naming convetion for booleans. Some common ones we often use:
   - `isLoading` - means waiting for some async fetch of data (may switch value back and forth).
   - `isFirstLoadComplete` - means that all the data necessary for displaying a component was gathered, and the UI was displayed to the user (we also have `isInitialised` in our codebase, but it's not as precise, and thus deprecated)
 - Comments are good, we like comments. It's good to write a short description of a component or utlity function, or to explain some complex code step-by-step.
-- We use JSDoc comments to describe classes, functions, variables, and properties. We use regular comments for everything else.
+  - Bonus: if you're trying to understand some code for the first time, it's probably a perfect moment to add some comments for the next adventurer :).
+- We use JSDoc comments to describe classes, functions, variables, and properties. We use regular comments for everything else. Many editors understand and use JSDoc comments internally and thus are helpful.
 - Use `t()` for every Front-end facing static string.
-  - `/kpi/jsapp/js/i18nMissingStrings.es6` file holds all the strings we want to translate but don't appear in our Front-end code
-- At minimum write tests for utility functions
+  - `/kpi/jsapp/js/i18nMissingStrings.es6` file holds all the strings we want to translate but don't appear in our Front-end code.
+- At minimum write tests for utility functions.
 
 CSS:
 - Use CSS modules. Do not use BEM style class names, unless appropriate for complex or global CSS. Do not use the deprecated `makeBem` utility.
 - We use autoprefixer, so no need to add prefixes manually.
-- Avoid adding new colors to stylesheets. We have [a list of all available colors](https://github.com/kobotoolbox/kobo-common/blob/main/src/styles/colors.scss) defined at `kobo-common` package. If the design contains a color that is very similar to existing one - use that color. If it's completely new color, please discuss adding it to the list with Design Team or Front End Lead.
+- Avoid adding new colors to stylesheets. We have an existing [list of all available colors](https://github.com/kobotoolbox/kpi/blob/main/jsapp/scss/colors.scss). If the design contains a color that is very similar to existing one - use that color. If it's completely new color, please discuss adding it to the list with Design Team or Front-End Lead.
+
+## Common components
+
+These are Buttons, Checkboxes, and many other common/atomic UI elements. The aim is to write DRY code and build beautiful, consistent UI. We gather them all in `js/components/common` directory, but you can see them all in action at our [storybook](https://storybook.kbtdev.org).
+
+Please:
+- Make sure you know what we have.
+- Avoid creating custom one-shots that are very similar to existing common components.
+- Adding new option to common component (size, color, etc.) shouldn't be done lightly.
+  - Make sure to update the story file for the component if you ever add that option.
+- If in doubt, please refer to Design Team or Front-End Lead.
 
 ## Workflow
 
@@ -78,18 +96,18 @@ Some notes first:
 - we generate an icons font from `svg` files using [webfonts-generator](https://www.npmjs.com/package/webfonts-generator) package
 - the source of the icons is the Sketch file from our Google Drive: `/Kobo Product Design/Design Current/04. Design/Comps Sketch/Icons.sketch`
 - all the icons need to have the same artboard size (`webfonts-generator` requirement)
-- after [kpi#3305](https://github.com/kobotoolbox/kpi/issues/3305) is done, this will be much simpler 😇
+- after [kpi#4109](https://github.com/kobotoolbox/kpi/issues/4109) is done, this will be much simpler 😇
 
 Steps to take when adding new icon:
 
 1. Open `Icons.sketch`
-2. Create new artboard `Icons/<icon-name>`, make sure it is exportable (easiest way is to clone an existing one)
+2. Create new artboard `Icons/<icon-name>` with the same size as the other. Make sure it is exportable (easiest way is to clone an existing one)
 3. Draw the icon or drag&drop existing SVG file, make sure the paths are combined and the color is black (`#000000`)
 4. Export all icons
 5. Copy new icon from `Icons/<icon-name>.svg` to `jsapp/svg-icons` in KPI repository
 6. Run the new `svg` file through [ImageOptim.app](https://imageoptim.com) or some alternative non-destructive SVG compressor
 7. Run `npm run generate-icons`
-8. Use your new icon: `<i className='k-icon k-icon-<icon-name>'/>`
+8. Use your new icon, e.g. `<Icon name='alert'/>` (or through some other component that uses icons internally)
 
 ## Getting translations
 
