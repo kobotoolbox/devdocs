@@ -77,6 +77,16 @@ Check out kobocat logs `./run.py -cf logs -f --tail=10 kobocat` at `kobo-install
 
 ## Misc problems
 
+### Email-activating fake account
+
+Sometimes you create a test account on local environment with just a username and password (no email address). If you try to log in, you will see "confirm email" message. You don't need to create temporary email addresses, you can simply add one line on your dev settings:
+
+```
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+```
+
+After that you will see the email content in your logs (and you can click the activation link through there).
+
 ### JS out of memory
 
 `ts-loader FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory`
