@@ -79,7 +79,7 @@ Check out kobocat logs `./run.py -cf logs -f --tail=10 kobocat` at `kobo-install
 
 ### Email-activating fake account
 
-Sometimes you create a test account on local environment with just a username and password (no email address). If you try to log in, you will see "confirm email" message. You don't need to create temporary email addresses, you can simply add one line on your dev settings (for `kobo-install` it's most probably `kobo-env/envfiles/kpi.txt`):
+Sometimes you create a test account on local environment with just a username and password (no email address). If you try to log in, you will see "confirm email" message. You don't need to create temporary email addresses, you can simply add one line on your dev settings (for `kobo-install` it's most probably `kobo-env/envfiles/kpi.txt`; `kobo-env` is a directory that is created as a sibling to `kobo-install`):
 
 ```
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
