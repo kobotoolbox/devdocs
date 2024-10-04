@@ -85,7 +85,7 @@ Sometimes you create a test account on local environment with just a username an
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ```
 
-After that you will see the email content in your logs (so either `./run.py --logs` or through docker). You can click the activation link through there.
+After that you will see the email content in your logs (e.g. `./run.py -cf logs -f kpi`) for both email activation and password reset emails. You can click the link from the logs.
 
 ### JS out of memory
 
