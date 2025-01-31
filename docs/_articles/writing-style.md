@@ -11,7 +11,14 @@ The rules are:
 - Use real ellipsis character (<code>…</code>) rather than three periods (<code>...</code>)<sup>1</sup>.
 - Remember that our name is capitalized like this: `KoboToolbox` (and similarly `Kobo`).
 - For translated text with placeholders, please use a descriptive text and wrap it in double hashes. E.g. for `Do you live in ##country name## right now?` the placeholder is `##country name##`.
-- For translated text with links, please use a normal text and wrap it in square brackets. E.g. for `Plase [read the article] first!`, the whole text `read the article` would become a clickable link - the url will be provided by JS code.
+- For translated text with links, please use a normal text and wrap it in square brackets. E.g. for `Plase [read the article] first!`, the whole text `read the article` would become a clickable link - the url will be provided by JS code. Example usage:
+  ```ts
+  <span 
+    dangerouslySetInnerHTML={{
+      __html: replaceBracketsWithLink(t('Learn more [here].'), '<your URL>'),
+    }} 
+  />
+  ```
 - Use American English for UI text. The Merriam Webster dictionary is the first choice of dictionaries, and Oxford American is the second choice.
 
 If in doubt, please mimic what is already there.
