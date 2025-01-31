@@ -14,11 +14,15 @@ The rules are:
 - For translated text with links, please use a normal text and wrap it in square brackets. E.g. for `Plase [read the article] first!`, the whole text `read the article` would become a clickable link - the url will be provided by JS code. Example usage:
   <!-- {% raw %} -->
   ```ts
+  // using utility function
   <span 
     dangerouslySetInnerHTML={{
       __html: replaceBracketsWithLink(t('Learn more [here].'), '<your URL>'),
     }} 
   />
+
+  // using markdown
+  const message = t('Please [contact us](##CONTACT_LINK##) to speak with our team.').replace('##CONTACT_LINK##', '<your URL>');
   ```
   <!-- {% endraw %} -->
 - Use American English for UI text. The Merriam Webster dictionary is the first choice of dictionaries, and Oxford American is the second choice.
